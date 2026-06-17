@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scrawl</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="drawing-canvas"></canvas>
+
+  <div id="toolbar">
+    <div id="color-swatches">
+      <button class="color-swatch active" data-color="#000000" style="background:#000000"></button>
+      <button class="color-swatch" data-color="#FF0000" style="background:#FF0000"></button>
+      <button class="color-swatch" data-color="#0066FF" style="background:#0066FF"></button>
+      <button class="color-swatch" data-color="#00CC44" style="background:#00CC44"></button>
+      <button class="color-swatch" data-color="#FFFFFF" style="background:#FFFFFF; border:1px solid #666"></button>
+      <button class="color-swatch" data-color="#FFCC00" style="background:#FFCC00"></button>
+      <input type="color" id="custom-color" value="#FF6600" title="Custom color">
+    </div>
+
+    <div id="width-control">
+      <input type="range" id="stroke-width" min="3" max="30" value="8">
+      <span id="width-value">8</span>
+    </div>
+
+    <button id="btn-blur" title="Blur tool — drag to blur a region">Blur</button>
+    <button id="btn-undo" title="Undo (Ctrl+Z)">Undo</button>
+    <button id="btn-clear" title="Clear all">Clear</button>
+    <button id="btn-close" title="Close Scrawl">&times;</button>
+  </div>
+
+  <script src="bundle.js"></script>
+</body>
+</html>

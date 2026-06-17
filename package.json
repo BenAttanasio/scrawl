@@ -1,0 +1,37 @@
+{
+  "name": "scrawl",
+  "version": "1.0.0",
+  "description": "Minimalist desktop drawing overlay for Windows",
+  "main": "main.js",
+  "scripts": {
+    "build": "esbuild renderer/app.js --bundle --outfile=renderer/bundle.js --platform=browser --format=iife",
+    "start": "npm run build && electron .",
+    "pack": "(taskkill /F /IM Scrawl.exe || true) >nul 2>&1 && node -e \"setTimeout(()=>process.exit(),2000)\" && npm run build && electron-builder --win dir && node -e \"const {rcedit}=require('rcedit');rcedit('dist/win-unpacked/Scrawl.exe',{icon:'icon.ico'})\""
+  },
+  "build": {
+    "appId": "com.scrawl.overlay",
+    "productName": "Scrawl",
+    "win": {
+      "target": "dir",
+      "icon": "icon.ico",
+      "signAndEditExecutable": false
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/index.html",
+      "renderer/styles.css",
+      "renderer/bundle.js",
+      "icon.ico"
+    ]
+  },
+  "devDependencies": {
+    "electron": "^31.7.7",
+    "electron-builder": "^25.1.8",
+    "esbuild": "^0.24.0",
+    "rcedit": "^5.0.2"
+  },
+  "dependencies": {
+    "perfect-freehand": "^1.2.2"
+  }
+}
