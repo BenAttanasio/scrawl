@@ -11,6 +11,7 @@ Set oShortcut = WshShell.CreateShortcut(strDesktop & "\Scrawl.lnk")
 oShortcut.TargetPath = strExe
 oShortcut.WorkingDirectory = strAppDir & "\dist\win-unpacked"
 oShortcut.Description = "Scrawl - Desktop Drawing Overlay"
+oShortcut.IconLocation = strAppDir & "\icon.ico, 0"
 oShortcut.Save
 
 MsgBox "Scrawl shortcut created on your Desktop!", vbInformation, "Scrawl"

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!--
+    Scrawl app icon — brand scheme (benattanasio.com): sage #8faa6f on dark
+    green-charcoal, soft glow. A bold freehand "S" scrawl that reads as both the
+    initial and a drawn stroke, legible at 16px. Rendered by make-icon.js.
+  -->
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: transparent; }
+    svg { display: block; width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="tile" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#21241f"/>
+        <stop offset="1" stop-color="#15170f"/>
+      </linearGradient>
+      <radialGradient id="glow" cx="50%" cy="46%" r="54%">
+        <stop offset="0" stop-color="#8faa6f" stop-opacity="0.30"/>
+        <stop offset="62%" stop-color="#8faa6f" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="ink" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#b8d199"/>
+        <stop offset="1" stop-color="#8faa6f"/>
+      </linearGradient>
+    </defs>
+
+    <rect x="0" y="0" width="1024" height="1024" rx="232" fill="url(#tile)"/>
+    <rect x="0" y="0" width="1024" height="1024" rx="232" fill="url(#glow)"/>
+
+    <!-- freehand S-scrawl: one confident continuous stroke with tapered caps -->
+    <path d="M 700 360
+             C 612 250, 430 244, 392 366
+             C 352 494, 612 520, 636 632
+             C 660 752, 470 792, 336 700"
+          fill="none" stroke="url(#ink)" stroke-width="104"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <!-- tiny ink dot tail, suggests a pen lift -->
+    <circle cx="318" cy="688" r="20" fill="#8faa6f"/>
+  </svg>
+</body>
+</html>

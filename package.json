@@ -6,7 +6,7 @@
   "scripts": {
     "build": "esbuild renderer/app.js --bundle --outfile=renderer/bundle.js --platform=browser --format=iife",
     "start": "npm run build && electron .",
-    "pack": "(taskkill /F /IM Scrawl.exe || true) >nul 2>&1 && node -e \"setTimeout(()=>process.exit(),2000)\" && npm run build && electron-builder --win dir && node -e \"const {rcedit}=require('rcedit');rcedit('dist/win-unpacked/Scrawl.exe',{icon:'icon.ico'})\""
+    "pack": "(taskkill /F /IM Scrawl.exe >nul 2>&1 || ver >nul) && node -e \"setTimeout(()=>process.exit(),2000)\" && npm run build && electron-builder --win dir && node -e \"const {rcedit}=require('rcedit');rcedit('dist/win-unpacked/Scrawl.exe',{icon:'icon.ico'})\""
   },
   "build": {
     "appId": "com.scrawl.overlay",
